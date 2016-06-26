@@ -17,7 +17,7 @@ export async function authenticate(req, res, next) {
         state: providerFixture.locations[0].state
       },
       phone: providerFixture.locations[0].phone,
-      name: providerFixture.locations[0].organization_name
+      name: providerFixture.organization_name
     }
     req.user.plan = {
       number: cleanedData.planNumber,
