@@ -33,6 +33,9 @@ const userSchema = new mongoose.Schema({
   },
   categories: {
     type: mongoose.Schema.Types.Mixed
+  },
+  family: {
+    type: mongoose.Schema.Types.Mixed
   }
 })
 

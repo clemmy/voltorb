@@ -3,6 +3,7 @@ import UserModel from '../models/User'
 import Utils from '../utils'
 
 export async function checkAuth(req, res, next) {
+  console.log('checkAuth')
   const { memberId, firstName, lastName } = req.body
 
   if (!memberId) {
@@ -10,22 +11,7 @@ export async function checkAuth(req, res, next) {
   }
 
   try {
-    const token = await Utils.getToken()
-    const response = await axios({
-      method: 'post',
-      url: 'https://platform.pokitdok.com/api/v4/eligibility/',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      },
-      data: {
-        member: {
-          first_name: firstName,
-          last_name: lastName,
-          id: memberId
-        },
-        trading_partner_id: 'MOCKPAYER'
-      }
-    })
+    const response = await Utils.fetchUser(firstName, lastName, memberId)
 
     if (response.status !== 200) {
       throw new Error('Error getting user from pokitdok database')
@@ -40,6 +26,7 @@ export async function checkAuth(req, res, next) {
 }
 
 export async function getUser(req, res, next) {
+  console.log('getUser')
   const {
     memberId,
     firstName,

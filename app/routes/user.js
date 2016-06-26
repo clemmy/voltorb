@@ -36,3 +36,32 @@ export async function authenticate(req, res, next) {
     return next(err)
   }
 }
+
+export async function addFamilyMember(req, res, next) {
+  const { memberId, family } = req.body
+
+  try {
+    const response = await Utils.fetchUser(family.firstName, family.lastName, family.memberId)
+
+    if (response.status !== 200) {
+      throw new Error('Error getting user from pokitdok database')
+    }
+
+    const cleanedFamilyData = Utils.transformData(response.data.data)
+
+    if (!req.user.family) {
+      req.user.family = {}
+    }
+
+    req.user.family[cleanedFamilyData.memberId] = {
+      categories: cleanedFamilyData.planCategories
+    }
+
+    req.user.save()
+
+    res.json(req.user.family[cleanedFamilyData.memberId])
+
+  } catch(err) {
+    return next(err)
+  }
+}

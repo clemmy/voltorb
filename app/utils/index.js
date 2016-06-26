@@ -1,6 +1,7 @@
 import axios from 'axios'
 import _ from 'lodash'
 import constants from '../constants'
+import testerFixture from '../../fixtures/members/TESTER.json'
 
 function fuzzyFindPair(deductibles) {
   let results = []
@@ -91,19 +92,52 @@ function getFormattedPlanCategoryData(rawDeductibles, rawCopay, rawCoinsurance) 
   return data
 }
 
+function getToken() {
+  return axios({
+    method: 'post',
+    url: 'https://platform.pokitdok.com/oauth2/token',
+    headers: {
+      'Authorization': 'Basic Z1B4VE1EcFdGY0N2VFRWNlZRYkg6bnZLcmlVUVVCTVc1NjYzVG01cEd3OWZJT2pIWnJHZ09La04yVEZMYwo='
+    },
+    data: 'grant_type=client_credentials'
+  }).then((response) => response.data.access_token)
+}
+
 export default {
-  getToken: function() {
-    return axios({
-      method: 'post',
-      url: 'https://platform.pokitdok.com/oauth2/token',
-      headers: {
-        'Authorization': 'Basic Z1B4VE1EcFdGY0N2VFRWNlZRYkg6bnZLcmlVUVVCTVc1NjYzVG01cEd3OWZJT2pIWnJHZ09La04yVEZMYwo='
-      },
-      data: 'grant_type=client_credentials'
-    }).then((response) => response.data.access_token)
+  getToken,
+  fetchUser: function(firstName, lastName, memberId) {
+    if (memberId === 'TESTER') {
+      return new Promise(function(resolve, reject) {
+        resolve({
+          data: {
+            data: testerFixture
+          },
+          status: 200
+        })
+      })
+    }
+
+    return getToken().then((token) => {
+      return axios({
+        method: 'post',
+        url: 'https://platform.pokitdok.com/api/v4/eligibility/',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        data: {
+          member: {
+            first_name: firstName,
+            last_name: lastName,
+            id: memberId
+          },
+          trading_partner_id: 'MOCKPAYER'
+        }
+      })
+    })
   },
   transformData: function(rawData) {
     return {
+      memberId: rawData.subscriber.id,
       planNumber: rawData.coverage.plan_number,
       planDescription: rawData.coverage.group_description,
       provider: rawData.provider,
