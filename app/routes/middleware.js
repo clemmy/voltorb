@@ -1,19 +1,53 @@
+import axios from 'axios'
 import UserModel from '../models/User'
+import Utils from '../utils'
 
 export async function checkAuth(req, res, next) {
-  const { memberId } = req.body
+  const { memberId, firstName, lastName } = req.body
 
   if (!memberId) {
     return next(new Error('Must provide "memberId" in request body'))
   }
+
+  try {
+    const token = await Utils.getToken()
+    const response = await axios({
+      method: 'post',
+      url: 'https://platform.pokitdok.com/api/v4/eligibility/',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
+      data: {
+        member: {
+          first_name: firstName,
+          last_name: lastName,
+          id: memberId
+        },
+        trading_partner_id: 'MOCKPAYER'
+      }
+    })
+
+    if (response.status !== 200) {
+      throw new Error('Error getting user from pokitdok database')
+    }
+    
+  } catch(err) {
+    return next(err)
+  }
+}
+
+export async function getUser(req, res, next) {
+  const {memberid} = req.body
 
   let user
   try {
     user = await UserModel.findOne({memberId});
     console.log(user)
     if (!user) {
-      // check if it exists and act accordingly
+      // create one
     }
+
+    // inject user
   } catch(err) {
     return next(err);
   }
