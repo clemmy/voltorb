@@ -37,6 +37,12 @@ export async function authenticate(req, res, next) {
   }
 }
 
+export async function getSelf(req, res, next) {
+  const { memberId, firstName, lastName } = req.body
+
+  res.json(_.omit(req.user._doc, ['cached']))
+}
+
 export async function addFamilyMember(req, res, next) {
   const { memberId, family } = req.body
 
