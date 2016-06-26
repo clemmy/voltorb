@@ -177,5 +177,42 @@ export default {
     long_term_care: {
       keywords: ['long', 'term', 'care']
     }
+  },
+  nurseMessages: {
+    hospital: {
+      covered: {
+        msg: "Oh no. Feel better hun. The good news is that you are covered for hospital fees as well as a good portion of your prescriptions. Let me know if I can help you with anything else hun."
+      },
+      notCovered: {
+        msg: "Oh my. You poor thing. Unfortunately, you are not covered for hospital fees. I believe you should still go seek a health professional though to get that checked. If I can help you with anything else and I mean anything, let me know."
+      }
+    },
+    medical: {
+      covered: {
+        msg: "Ouch. That must not feel good. You are covered for doctor visits as well as some drug precriptions. My suggestion is to see your doctor as soon as possible hun. And sweetie, let me know if you have anymore questions."
+      },
+      notCovered: {
+        msg: "That doesn’t sound too good. Are you feeling alright? The thing is that you are not covered for doctor visits or any consultation. My suggestion is still to seek out your doctor as soon as possible hun. And sweetie, let me know if you have anymore questions."
+      }
+    },
+    dental: {
+      covered: {
+        msg: "No no no. You must be in pain dear. You are absolutely covered for dental care and should definitely go see your dentist as soon as possible. You be good now. Let me know if I can help you with anything else."
+      },
+      notCovered: {
+        msg: "Oh dear. You must be in a lot of pain right now. The bad news is that you are not covered for dental work but you should still go see your dentist before it gets worst. You let me know if you need anything else okay hun?"
+      }
+    },
+    vision: {
+      covered: {
+        msg: "Hm, you have beautiful eyes hun. You are covered for eye exams and possibly the glasses as well so get that checked out. Let’s get you seeing properly again. Let me know if you need anything else hun."
+      },
+      notCovered: {
+        msg: "Your eyes are mesmerizing sweetie. Unfortunately, your eyes are not covered by your insurance which means that you’ll probably have to pay for better vision. Definitely talk to your local eye professionals to arrange something. And sweetie, let me know if you need anything else."
+      }
+    },
+    unknown: {
+      msg: "Oops. I couldn’t catch that. Can you rephrase?"
+    }
   }
 }
