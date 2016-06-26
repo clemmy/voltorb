@@ -30,24 +30,35 @@ export async function checkAuth(req, res, next) {
     if (response.status !== 200) {
       throw new Error('Error getting user from pokitdok database')
     }
-    
+
+    next()
+
   } catch(err) {
     return next(err)
   }
 }
 
 export async function getUser(req, res, next) {
-  const {memberid} = req.body
+  const {
+    memberId,
+    firstName,
+    lastName
+  } = req.body
 
-  let user
   try {
-    user = await UserModel.findOne({memberId});
-    console.log(user)
+    let user = await UserModel.findOne({memberId});
+
     if (!user) {
-      // create one
+      user = new UserModel({
+        memberId,
+        firstName,
+        lastName
+      })
+      await user.save()
     }
 
-    // inject user
+    req.user = user
+    next()
   } catch(err) {
     return next(err);
   }
