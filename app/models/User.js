@@ -12,7 +12,31 @@ const userSchema = new mongoose.Schema({
   },
   birthDate: {
     type: Date
+  },
+  cached: {
+    type: mongoose.Schema.Types.Mixed
+  },
+  provider: {
+    npi: String,
+    location: {
+      address: String,
+      city: String,
+      zipcode: String,
+      state: String
+    },
+    phone: String,
+    name: String
+  },
+  plan: {
+    number: String,
+    description: String
+  },
+  categories: {
+    type: mongoose.Schema.Types.Mixed
+  },
+  family: {
+    type: mongoose.Schema.Types.Mixed
   }
-}, { _id : false })
+})
 
 export default mongoose.model('User', userSchema)

@@ -1,0 +1,32 @@
+{
+  "npi": "1912301953",
+  "uuid": "2ba4dec6-b482-4ff3-bfa7-581946c17097",
+  "entity_type": "organization",
+  "locations": [
+    {
+      "address_lines": [
+        "28 E 3rd Ave Ste 300"
+      ],
+      "city": "San Mateo",
+      "zipcode": "94401",
+      "phone": "8775645029",
+      "state": "CA",
+      "geo_location": [
+        -122.32501,
+        37.56357
+      ],
+      "role": [
+        "practice"
+      ]
+    }
+  ],
+  "specialty_primary": [
+    "Technician, Health Information"
+  ],
+  "specialty": [
+    "Technician, Health Information"
+  ],
+  "organization_name": "PokitDok, Inc",
+  "phone": "6505033793",
+  "verified": true
+}
