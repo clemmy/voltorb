@@ -76,61 +76,15 @@
       "deductibles" : [
           {
               "benefit_amount" : {
-                  "amount" : "6000",
-                  "currency" : "USD"
-              },
-              "coverage_level" : "family",
-              "time_period" : "calendar_year",
-              "eligibility_date" : "2013-01-01",
-              "in_plan_network" : "yes",
-              "messages" : [
-                  {
-                      "message" : "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME CARE VST"
-                  }
-              ],
-              "service_types" : [
-                  "health_benefit_plan_coverage"
-              ],
-              "service_type_codes" : [
-                  "30"
-              ]
-          },
-          {
-              "benefit_amount" : {
-                  "amount" : "5956.09",
-                  "currency" : "USD"
-              },
-              "coverage_level" : "family",
-              "time_period" : "remaining",
-              "in_plan_network" : "yes",
-              "messages" : [
-                  {
-                      "message" : "INT MED AND RX"
-                  }
-              ],
-              "service_types" : [
-                  "health_benefit_plan_coverage"
-              ],
-              "service_type_codes" : [
-                  "30"
-              ]
-          },
-          {
-              "benefit_amount" : {
-                  "amount" : "3000",
+                  "amount" : "4000",
                   "currency" : "USD"
               },
               "coverage_level" : "individual",
               "time_period" : "calendar_year",
               "eligibility_date" : "2013-01-01",
               "in_plan_network" : "yes",
-              "messages" : [
-                  {
-                      "message" : "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME CARE VST"
-                  }
-              ],
               "service_types" : [
-                  "health_benefit_plan_coverage"
+                  "physician_visit_office_sick"
               ],
               "service_type_codes" : [
                   "30"
@@ -138,19 +92,14 @@
           },
           {
               "benefit_amount" : {
-                  "amount" : "2983.57",
+                  "amount" : "3156.12",
                   "currency" : "USD"
               },
               "coverage_level" : "individual",
               "time_period" : "remaining",
               "in_plan_network" : "yes",
-              "messages" : [
-                  {
-                      "message" : "INT MED AND RX"
-                  }
-              ],
               "service_types" : [
-                  "health_benefit_plan_coverage"
+                  "physician_visit_office_sick"
               ],
               "service_type_codes" : [
                   "30"
@@ -158,7 +107,38 @@
           },
           {
               "benefit_amount" : {
-                  "amount" : "12000",
+                  "amount" : "2000",
+                  "currency" : "USD"
+              },
+              "coverage_level" : "individual",
+              "time_period" : "calendar_year",
+              "eligibility_date" : "2013-01-01",
+              "in_plan_network" : "yes",
+              "service_types" : [
+                  "routine_physical"
+              ],
+              "service_type_codes" : [
+                  "30"
+              ]
+          },
+          {
+              "benefit_amount" : {
+                  "amount" : "943.52",
+                  "currency" : "USD"
+              },
+              "coverage_level" : "individual",
+              "time_period" : "remaining",
+              "in_plan_network" : "yes",
+              "service_types" : [
+                  "routine_physical"
+              ],
+              "service_type_codes" : [
+                  "30"
+              ]
+          },
+          {
+              "benefit_amount" : {
+                  "amount" : "5000",
                   "currency" : "USD"
               },
               "coverage_level" : "family",
@@ -171,7 +151,7 @@
                   }
               ],
               "service_types" : [
-                  "health_benefit_plan_coverage"
+                  "orthodontics"
               ],
               "service_type_codes" : [
                   "30"
@@ -179,7 +159,7 @@
           },
           {
               "benefit_amount" : {
-                  "amount" : "11956.09",
+                  "amount" : "1956.09",
                   "currency" : "USD"
               },
               "coverage_level" : "family",
@@ -191,7 +171,7 @@
                   }
               ],
               "service_types" : [
-                  "health_benefit_plan_coverage"
+                  "orthodontics"
               ],
               "service_type_codes" : [
                   "30"
@@ -199,7 +179,7 @@
           },
           {
               "benefit_amount" : {
-                  "amount" : "6000",
+                  "amount" : "1000",
                   "currency" : "USD"
               },
               "coverage_level" : "individual",
@@ -212,7 +192,7 @@
                   }
               ],
               "service_types" : [
-                  "health_benefit_plan_coverage"
+                  "routine_preventive_dental"
               ],
               "service_type_codes" : [
                   "30"
@@ -220,7 +200,7 @@
           },
           {
               "benefit_amount" : {
-                  "amount" : "5983.57",
+                  "amount" : "183.17",
                   "currency" : "USD"
               },
               "coverage_level" : "individual",
@@ -232,7 +212,130 @@
                   }
               ],
               "service_types" : [
-                  "health_benefit_plan_coverage"
+                  "routine_preventive_dental"
+              ],
+              "service_type_codes" : [
+                  "30"
+              ]
+          },
+          {
+              "benefit_amount" : {
+                  "amount" : "400",
+                  "currency" : "USD"
+              },
+              "coverage_level" : "individual",
+              "time_period" : "calendar_year",
+              "eligibility_date" : "2013-01-01",
+              "in_plan_network" : "no",
+              "messages" : [
+                  {
+                      "message" : "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"
+                  }
+              ],
+              "service_types" : [
+                  "vision_optometry"
+              ],
+              "service_type_codes" : [
+                  "30"
+              ]
+          },
+          {
+              "benefit_amount" : {
+                  "amount" : "83.33",
+                  "currency" : "USD"
+              },
+              "coverage_level" : "individual",
+              "time_period" : "remaining",
+              "in_plan_network" : "no",
+              "messages" : [
+                  {
+                      "message" : "INT MED AND RX"
+                  }
+              ],
+              "service_types" : [
+                  "vision_optometry"
+              ],
+              "service_type_codes" : [
+                  "30"
+              ]
+          },
+          {
+              "benefit_amount" : {
+                  "amount" : "300",
+                  "currency" : "USD"
+              },
+              "coverage_level" : "individual",
+              "time_period" : "calendar_year",
+              "eligibility_date" : "2013-01-01",
+              "in_plan_network" : "no",
+              "messages" : [
+                  {
+                      "message" : "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"
+                  }
+              ],
+              "service_types" : [
+                  "eyewear_and_accessories"
+              ],
+              "service_type_codes" : [
+                  "30"
+              ]
+          },
+          {
+              "benefit_amount" : {
+                  "amount" : "17.21",
+                  "currency" : "USD"
+              },
+              "coverage_level" : "individual",
+              "time_period" : "remaining",
+              "in_plan_network" : "no",
+              "messages" : [
+                  {
+                      "message" : "INT MED AND RX"
+                  }
+              ],
+              "service_types" : [
+                  "eyewear_and_accessories"
+              ],
+              "service_type_codes" : [
+                  "30"
+              ]
+          },
+          {
+              "benefit_amount" : {
+                  "amount" : "10000",
+                  "currency" : "USD"
+              },
+              "coverage_level" : "individual",
+              "time_period" : "calendar_year",
+              "eligibility_date" : "2013-01-01",
+              "in_plan_network" : "no",
+              "messages" : [
+                  {
+                      "message" : "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"
+                  }
+              ],
+              "service_types" : [
+                  "hospital_emergency_accident"
+              ],
+              "service_type_codes" : [
+                  "30"
+              ]
+          },
+          {
+              "benefit_amount" : {
+                  "amount" : "10000",
+                  "currency" : "USD"
+              },
+              "coverage_level" : "individual",
+              "time_period" : "remaining",
+              "in_plan_network" : "no",
+              "messages" : [
+                  {
+                      "message" : "INT MED AND RX"
+                  }
+              ],
+              "service_types" : [
+                  "'hospital_emergency_accident'"
               ],
               "service_type_codes" : [
                   "30"
