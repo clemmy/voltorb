@@ -31,13 +31,7 @@ export default {
     prescription: {
       prettyText: 'Prescription',
       serviceTypes: [
-        'brand_name_prescription_drug',
-        'brand_name_prescription_drug_formulary',
-        'brand_name_prescription_drug_non_formulary',
         'generic_prescription_drug',
-        'generic_prescription_drug_formulary',
-        'generic_prescription_drug_non_formulary',
-        'home_health_prescriptions',
         'pharmacy',
         'physical_medicine'
       ]
@@ -90,6 +84,98 @@ export default {
         'rehabilitation',
         'long_term_care'
       ]
+    }
+  },
+  serviceTypes: {
+    health_benefit_plan_coverage: {
+      keywords: ['health', 'benefit', 'plan', 'coverage', 'medical']
+    },
+    allergy_testing: {
+      keywords: ['allergy', 'testing', 'medical']
+    },
+    consultation: {
+      keywords: ['consultation', 'medical']
+    },
+    diagnostic_medical: {
+      keywords: ['diagnose', 'diagnostic', 'medical']
+    },
+    physician_visit_office_sick: {
+      keywords: ['doctor', 'physician', 'office', 'sick', 'walkin', 'medical']
+    },
+    physician_visit_office_well: {
+      keywords: ['doctor', 'physician', 'office', 'well', 'walkin', 'medical']
+    },
+    routine_physical: {
+      keywords: ['routine', 'physical', 'exam', 'medical']
+    },
+    orthodontics: {
+      keywords: ['orthodontics', 'teeth']
+    },
+    routine_preventive_dental: {
+      keywords: ['routine', 'preventive', 'dental', 'teeth']
+    },
+    dental_care: {
+      keywords: ['dental', 'care', 'dentist', 'teeth']
+    },
+    vision_optometry: {
+      keywords: ['vision', 'optometry', 'eye', 'exam']
+    },
+    eyewear_and_accessories: {
+      keywords: ['glasses', 'eyewear', 'accessories', 'vision', 'eye']
+    },
+    eye: {
+      keywords: ['eye', 'vision', 'optical']
+    },
+    generic_prescription_drug: {
+      keywords: ['generic', 'prescription', 'drug', 'pharmacy']
+    },
+    pharmacy: {
+      keywords: ['prescription', 'drug', 'pharmacy']
+    },
+    physical_medicine: {
+      keywords: ['prescription', 'drug', 'pharmacy', 'physical', 'medicine']
+    },
+    hospital_ambulatory_surgical: {
+      keywords: ['hospital', 'ambulatory', 'surgical', 'surgery']
+    },
+    hospital_emergency_accident: {
+      keywords: ['hospital', 'ambulance', 'surgical', 'surgery', 'emergency', 'fatal', 'broken']
+    },
+    hospital_emergency_medical: {
+      keywords: ['hospital', 'emergency', 'ambulance', 'medical']
+    },
+    urgent_care: {
+      keywords: ['urgent', 'care']
+    },
+    mri_cat_scan: {
+      keywords: ['mri', 'cat', 'scan', 'xray']
+    },
+    intensive_care: {
+      keywords: ['intensive', 'care', 'hospital']
+    },
+    hospital_inpatient: {
+      keywords: ['hospital', 'inpatient']
+    },
+    prosthetic_device: {
+      keywords: ['prosthetic', 'device', 'hospital', 'repair']
+    },
+    flu_vaccination: {
+      keywords: ['flu', 'vaccination', 'immunization']
+    },
+    immunizations: {
+      keywords: ['flu', 'vaccination', 'immunization']
+    },
+    mental_health: {
+      keywords: ['mental', 'health']
+    },
+    audiology_exam: {
+      keywords: ['audiology', 'exam', 'ears', 'ear']
+    },
+    rehabilitation: {
+      keywords: ['long', 'term', 'rehabilitation']
+    },
+    long_term_care: {
+      keywords: ['long', 'term', 'care']
     }
   }
 }
