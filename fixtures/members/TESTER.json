@@ -335,7 +335,7 @@
                   }
               ],
               "service_types" : [
-                  "'hospital_emergency_accident'"
+                  "hospital_emergency_accident"
               ],
               "service_type_codes" : [
                   "30"
@@ -353,11 +353,11 @@
                   }
               ],
               "copayment" : {
-                  "amount" : "20",
+                  "amount" : "15",
                   "currency" : "USD"
               },
               "service_types" : [
-                  "professional_physician_visit_office"
+                  "physician_visit_office_sick"
               ],
               "service_type_codes" : [
                   "98"
@@ -384,11 +384,25 @@
                   }
               ],
               "copayment" : {
-                  "amount" : "30",
+                  "amount" : "25",
                   "currency" : "USD"
               },
               "service_types" : [
-                  "professional_physician_visit_office"
+                  "routine_physical"
+              ],
+              "service_type_codes" : [
+                  "98"
+              ]
+          },
+          {
+              "coverage_level" : "employee_and_spouse",
+              "in_plan_network" : "not_applicable",
+              "copayment" : {
+                  "amount" : "40",
+                  "currency" : "USD"
+              },
+              "service_types" : [
+                  "vision_optometry"
               ],
               "service_type_codes" : [
                   "98"
