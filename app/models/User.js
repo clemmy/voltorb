@@ -15,6 +15,9 @@ const userSchema = new mongoose.Schema({
   },
   cached: {
     type: mongoose.Schema.Types.Mixed
+  },
+  provider: {
+    type: mongoose.Schema.Types.Mixed
   }
 })
 
