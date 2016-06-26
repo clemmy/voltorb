@@ -53,13 +53,18 @@ export async function addFamilyMember(req, res, next) {
       throw new Error('Error getting user from pokitdok database')
     }
 
-    const cleanedFamilyData = Utils.transformData(response.data.data)
+    const familyData = response.data.data
+    const cleanedFamilyData = Utils.transformData(familyData)
 
     if (!req.user.family) {
       req.user.family = {}
     }
 
     req.user.family[cleanedFamilyData.memberId] = {
+      firstName: familyData.subscriber.first_name,
+      lastName: familyData.subscriber.last_name,
+      memberId: familyData.subscriber.id,
+      dob: familyData.subscriber.birth_date,
       categories: cleanedFamilyData.planCategories
     }
 
