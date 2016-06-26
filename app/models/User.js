@@ -12,6 +12,9 @@ const userSchema = new mongoose.Schema({
   },
   birthDate: {
     type: Date
+  },
+  cached: {
+    type: mongoose.Schema.Types.Mixed
   }
 })
 

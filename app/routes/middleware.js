@@ -31,6 +31,7 @@ export async function checkAuth(req, res, next) {
       throw new Error('Error getting user from pokitdok database')
     }
 
+    req.cachedResponse = response.data.data
     next()
 
   } catch(err) {
@@ -52,9 +53,11 @@ export async function getUser(req, res, next) {
       user = new UserModel({
         memberId,
         firstName,
-        lastName
+        lastName,
+        cached: req.cachedResponse
       })
       await user.save()
+      req.created = true
     }
 
     req.user = user
