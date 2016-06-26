@@ -36,7 +36,8 @@ const userSchema = new mongoose.Schema({
   },
   family: {
     type: mongoose.Schema.Types.Mixed
-  }
+  },
+  categoriesToDisplay: [String]
 })
 
 export default mongoose.model('User', userSchema)
