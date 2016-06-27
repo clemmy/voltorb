@@ -17,7 +17,7 @@ export async function authenticate(req, res, next) {
         state: providerFixture.locations[0].state
       },
       phone: providerFixture.locations[0].phone,
-      name: providerFixture.locations[0].organization_name
+      name: providerFixture.organization_name
     }
     req.user.plan = {
       number: cleanedData.planNumber,
@@ -75,4 +75,19 @@ export async function addFamilyMember(req, res, next) {
   } catch(err) {
     return next(err)
   }
+}
+
+// expect categories to be an array of strings
+export async function updateCategoriesToDisplay(req, res, next) {
+  const { memberId, categories } = req.body
+
+  req.user.categoriesToDisplay = categories
+
+  try {
+    await req.user.save()
+  } catch (err) {
+    return next(err)
+  }
+
+  res.json(req.user.categoriesToDisplay)
 }
